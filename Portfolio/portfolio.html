@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Elinan portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Overpass+Mono|Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <!-- Banner ja navi -->
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" id="alku">
+            <h1>Portfolio</h1>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#alku">Home <span class="sr-only"> (current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#minusta">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projektit">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#yhteystiedot">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- grid -->
+
+    <div class="container" id="ekalaatikko">
+        <h2>About</h2> <br>
+        <div class="row">
+            <div class="col-md-4" style="width:600px">
+                <img src="kuvat/elina2.jpg" alt="minä">
+
+            </div>
+            <div class="col-md-8">
+                <p><br>Hi! My name is Elina. Welcome to my page. </p><p><br> I love learning new and that was one of the reasons I decided to go to study business information technology. ICT is always evolving field and I’m excited to be part of it. I’m constantly seeking possibilities to develop my skills and grow professionally and personally. Here you can find a few projects where I’ve been involved with.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--kortit-->
+
+
+        
+         <div class="container" id="tokalaatikko">
+
+        <h2>Projects</h2> <br>   
+        
+        <div class="card-deck">
+
+
+            <div class="card" style="width:600px">
+                <img class="card-img-top" id="eka" src="imgs/notebookandpen2.jpg" alt="muistivihko ja kynä" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">tori.fi</h4>
+                    <a href="tori.html" class="stretched-link"></a>
+
+                </div>
+            </div>
+
+
+            <div class="card" style="width:600px">
+                <img class="card-img-top" src="imgs/pineappleandpens1.jpg" alt="Ananaksia ja kyniä" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">kesäkalenteri</h4>
+                    <a href="kesakalenteri.html" class="stretched-link"></a>
+                </div>
+            </div>
+
+
+            <div class="card" style="width:600px">
+                <img class="card-img-top" src="imgs/pinsandpen1.jpg" alt="Kuva pinsseistä ja kynistä" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">kirpputori</h4>
+                    <a href="kirpputori.html" class="stretched-link"></a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+    <!--Päivän sitaatin haku Jquerylla-->
+
+    <div class="container" id="quotet">
+
+
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+        <script>
+            $.getJSON("http://quotes.rest/qod.json", function(data) {
+
+                // tähän quoten hakeminen ja tulostaminen sivulle
+                var items = [];
+                //kaupunki
+                items.push("<h2>" + data.contents.quotes[0].title + "</h2><br>");
+                items.push("<p>" + data.contents.quotes[0].quote + "</p>");
+
+
+
+
+
+                //tulostus
+                $("#quotet").append(items.join(""));
+
+
+            })
+        </script>
+
+    </div>
+
+
+    <div class="container" id="yhteystiedot">
+        <h2>Contact</h2> <br>
+
+        <p>email: elina.mantila(a)gmail.com</p>
+        <p><a href="https://www.linkedin.com/in/elinamantila/">Check my LinkedIn page</a></p>
+    </div>
+
+
+</body>
+</html>
